@@ -5,6 +5,13 @@ html
     title #{title}
     link(rel='stylesheet' href='/css/app.css')
   body
+    div(uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar")
+        nav.uk-navbar-container(uk-navbar style="position: relative; z-index: 980;")
+            .uk-navbar-left
+                ul.uk-navbar-nav
+                    li
+                        a(href="https://github.com/cjk4wp/cjk4wp")
+                            span(uk-icon='github')
     block content
     footer.footer
         .uk-container

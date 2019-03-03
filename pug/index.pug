@@ -1,5 +1,29 @@
 extends _layout
 
 block content
-    h1=title
-    p Welcome to CJK4WP!
+    section.main-title
+        .uk-container
+            h1.uk-text-center.uk-heading-primary=title
+            p.uk-text-center
+                | We are working group of WordPress users.
+                br
+                | Our mission is...
+            ol.uk-text-large.check-list
+                li Aggregate common issues in CJK web development.
+                li Publishing tips for non-CJK developers.
+                li Create and send patches to WordPress.
+    section.main-wip.uk-background-muted
+        .uk-container
+            h2.uk-headeing-line.uk-text-center
+                span Watch &amp; Star US!
+            p.uk-text-center
+                | We are now discussing about collaborating method.
+                br
+                | Github is a prior choice.
+                br
+                | Please watch our repo to get informed.
+
+            p.uk-text-center
+                a(href="https://github.com/cjk4wp/cjk4wp")
+                    span(uk-icon='icon:github; ratio:3')
+

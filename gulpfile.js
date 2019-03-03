@@ -122,10 +122,10 @@ gulp.task('copylib', () => {
 gulp.task('pug', () => {
   const compiled = pug.compileFile('pug/index.pug');
   const html = compiled({
-    title: 'Welcome to WP4CJK',
+    title: 'Welcome to CJK4WP',
   });
   return $.file('index.html', html, { src: true })
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('docs'));
 });
 
 // Watch BS
@@ -150,7 +150,10 @@ gulp.task('browser-sync', () => {
 });
 
 // Reload browser sync.
-gulp.task('bs-reload', () => browserSync.reload());
+gulp.task('bs-reload', (done) => {
+  browserSync.reload();
+  done();
+});
 
 
 // watch
@@ -167,7 +170,7 @@ gulp.task('watch', function () {
 gulp.task('build', gulp.parallel('js', 'sass', 'copylib', 'imagemin'));
 
 // Browser Sync
-gulp.task( 'bs', gulp.series( 'browser-sync', 'bs-watch' ) );
+gulp.task( 'bs', gulp.parallel( 'browser-sync', 'bs-watch' ) );
 
 // Default Tasks
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'bs') ));
