@@ -1,0 +1,9 @@
+.footer{
+
+  &-copy{
+    @extend .uk-text-center;
+    @extend .uk-text-small;
+    @extend .uk-text-uppercase;
+  }
+
+}
